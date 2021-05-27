@@ -24,10 +24,10 @@ wss.on('connection', function(ws) {
   });
 
   setTimeout(function () {
-    // ws.send(JSON.stringify({
-    //   type:'GetWinningNumber',
-    //   data: require('./.mock/getWinningNumber.json')
-    // }));
+    ws.send(JSON.stringify({
+      type:'GetWinningNumber',
+      data: require('./.mock/getWinningNumber.json')
+    }));
   }, 1000);
 
 });
