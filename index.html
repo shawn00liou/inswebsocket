@@ -6,7 +6,11 @@
 
     //製造ㄧ秒時間差，再傳送訊息給server
     setTimeout(function () {
-      sock.send('Hey there');
+      sock.send(JSON.stringify([[{ url: 'API/Home/Get' }]]));
     }, 1000);
+  };
+
+  sock.onmessage = function (msg) {
+    console.log(msg);
   };
 </script>
